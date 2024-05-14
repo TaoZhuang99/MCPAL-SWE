@@ -116,25 +116,25 @@ spl_tot = prs2spl(prs);
 % save('PAL_array_pic\data\audioSoundAngularAddi_1.mat', 'fp', 'prs', 'prs_couple');
 
 %%
-u0 = 0.1;
-dataAddi = load('PAL_array_pic\data\audioSoundAngularAddi_1.mat');
-
-spl_line = prs2spl(u0^2*dataAddi.prs(:,1));
-spl_addi = prs2spl(u0^2*dataAddi.prs(:,2));
-F_addi = griddedInterpolant(dataAddi.fp.theta, spl_addi, 'pchip');
-
-fp_inte = linspace(-pi/2, pi/2, 91);
-figure;
-plot(dataAddi.fp.theta/pi*180, spl_line);
-hold on
-plot(fp_inte/pi*180, F_addi(fp_inte));
-
-dataExac = load('Exact_couple_angle_01_prs2.mat');
-spl_exac = prs2spl(u0^2*dataExac.prs);
-F_exac = griddedInterpolant(dataExac.theta, spl_exac, 'pchip');
-
-plot(fp_inte/pi*180, F_exac(fp_inte));
-hold off
+% u0 = 0.1;
+% dataAddi = load('PAL_array_pic\data\audioSoundAngularAddi_1.mat');
+% 
+% spl_line = prs2spl(u0^2*dataAddi.prs(:,1));
+% spl_addi = prs2spl(u0^2*dataAddi.prs(:,2));
+% F_addi = griddedInterpolant(dataAddi.fp.theta, spl_addi, 'pchip');
+% 
+% fp_inte = linspace(-pi/2, pi/2, 91);
+% figure;
+% plot(dataAddi.fp.theta/pi*180, spl_line);
+% hold on
+% plot(fp_inte/pi*180, F_addi(fp_inte));
+% 
+% dataExac = load('Exact_couple_angle_01_prs2.mat');
+% spl_exac = prs2spl(u0^2*dataExac.prs);
+% F_exac = griddedInterpolant(dataExac.theta, spl_exac, 'pchip');
+% 
+% plot(fp_inte/pi*180, F_exac(fp_inte));
+% hold off
 
 %%
 
